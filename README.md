@@ -14,7 +14,7 @@ This repository provides a flexible and modular framework for highly efficient d
 ### 1. Training
  1. Set hyper-parameters properly in `config.py`.
     
-      *  **General hyperparameters** :  batch_size,  learning rate,  epochs,  decay(epochs for learning rate decay), lr_decay_factor, weight_decay
+      *  **General hyperparameters** :  batch_size,  learning rate,  epochs,  decay_epoch(epochs for learning rate decay), lr_decay_factor, weight_decay
 
       *  **Algorithm-specific hyperparameters** : 
       `GPU_interval`: the number of local updates per communication round on fast
