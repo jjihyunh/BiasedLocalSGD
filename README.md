@@ -12,33 +12,31 @@ This repository provides a flexible and modular framework for highly efficient d
 
 ## Instructions
 ### 1. Training
- 1. Set hyper-parameters properly in `config.py`.
-    
-      *  **General hyperparameters** :  batch_size,  learning rate,  epochs,  decay_epoch(epochs for learning rate decay), lr_decay_factor, weight_decay
+* **Step 1: Set hyper-parameters properly in `config.py`.**
 
-      *  **Algorithm-specific hyperparameters** : 
-      `GPU_interval`: the number of local updates per communication round on fast
+   *  **General hyperparameters** :  batch_size,   learning rate,   epochs,   decay_epoch(epochs for learning rate decay),  lr_decay_factor,   weight_decay
+   *  **Algorithm-specific hyperparameters** : 
+      
+         `GPU_interval`: the number of local updates per communication round on fast
 
-      `CPU_interval`: the number of local updates per communication round on slow
+         `CPU_interval`: the number of local updates per communication round on slow
+       
+         `num_CPU_workers`: the number of CPU workers configured to participate in the distributed training. These represent the slower compute resources in the heterogeneous system.
+       
+         `num_GPU_workers`: the number of GPU workers configured to participate in the distributed training. These represent the faster compute resources in the heterogeneous system.
+       
+         `biased`:
+      - **0** → All workers perform uniform random data sampling.
+      - **1** → Enable *biased data sampling*, where slower workers prioritize sampling high-loss data.
     
-      `num_CPU_workers`: the number of CPU workers configured to participate in the distributed training. These represent the slower compute resources in the heterogeneous system.
-    
-      `num_GPU_workers`: the number of GPU workers configured to participate in the distributed training. These represent the faster compute resources in the heterogeneous system.
-    
-      `biased`:
-    
-        - **0** → All workers perform uniform random data sampling.
-    
-        - **1** → Enable *biased data sampling*, where slower workers prioritize sampling high-loss data.
-    
- 3. Run training.
-      ```
+* **Step 2: Run training.**
+     ```bash
       mpirun -np 2 python3 main.py
-      ```
+
 ### 2. Output
 This program evaluates the trained model after every epoch and then outputs the results as follows.
- 1. `loss.txt`: An output file that contains the average training loss for each epoch.
- 2. `acc.txt`: An output file that contains the validation accuracy for each epoch.
+ * `loss.txt`: An output file that contains the average training loss for each epoch.
+ * `acc.txt`: An output file that contains the validation accuracy for each epoch.
 
 ## Questions / Comments
  * Jihyun Lim (wlguslim@inha.edu)
