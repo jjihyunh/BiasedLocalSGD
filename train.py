@@ -45,8 +45,6 @@ class framework:
              
                 # Data shuffle.
                 if self.count%self.dataset.shuffle_rounds==0:
-                    if self.rank==0:
-                        print("============================= Shuffle index =============================")
                     self.count=0
                     
                     if self.biased==0:
