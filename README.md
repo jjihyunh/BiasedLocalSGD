@@ -18,13 +18,20 @@ This repository provides a flexible and modular framework for highly efficient d
 
       *  **Algorithm-specific hyperparameters** : 
       `GPU_interval`: the number of local updates per communication round on fast
+
       `CPU_interval`: the number of local updates per communication round on slow
-      `num_CPU_workers`: the number of CPU workers configured to participate in the distributed training.    These represent the slower compute resources in the heterogeneous system.
-      `num_GPU_workers`: the number of GPU workers configured to participate in the distributed training.    These represent the faster compute resources in the heterogeneous system.
+    
+      `num_CPU_workers`: the number of CPU workers configured to participate in the distributed training. These represent the slower compute resources in the heterogeneous system.
+    
+      `num_GPU_workers`: the number of GPU workers configured to participate in the distributed training. These represent the faster compute resources in the heterogeneous system.
+    
       `biased`:
+    
         - **0** → All workers perform uniform random data sampling.
+    
         - **1** → Enable *biased data sampling*, where slower workers prioritize sampling high-loss data.
- 2. Run training.
+    
+ 3. Run training.
       ```
       mpirun -np 2 python3 main.py
       ```
