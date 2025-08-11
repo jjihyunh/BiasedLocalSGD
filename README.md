@@ -1,4 +1,4 @@
-# Biased Local SGD on Heterogeneous Systems - Framework
+# Biased Local SGD Framework: Accelerating Deep Learning on Heterogeneous Systems
 This repository provides a flexible and modular framework for highly efficient deep learning training on heterogeneous systems. It implements our novel Biased Local SGD approach, which intelligently utilizes diverse compute resources (CPUs, GPUs) by system-aware adjustment of local updates to eliminate synchronization overhead, and by introducing controlled bias in data sampling to enhance convergence. This combined method achieves faster training times with comparable or superior accuracy, making it ideal for cutting-edge distributed deep learning research.
 
 ## Software Requirements 
