@@ -2,6 +2,8 @@
 This repository provides a flexible and modular framework for highly efficient deep learning training on heterogeneous systems. It implements our novel Biased Local SGD approach, which intelligently utilizes diverse compute resources (CPUs, GPUs) by system-aware adjustment of local updates to eliminate synchronization overhead, and by introducing controlled bias in data sampling to enhance convergence. This combined method achieves faster training times with comparable or superior accuracy, making it ideal for cutting-edge distributed deep learning research.
 
 ## ⚙️ Software Requirements 
+> This code was developed and tested with  <img src="https://pytorch.org/assets/images/logo-icon.svg" alt="PyTorch" width="20" height="20">  PyTorch 2.7.1.
+
 * **Step 1: Make sure you have Python and pip installed on your system.**
 * **Step 2: Clone this repository:**
    ```bash
