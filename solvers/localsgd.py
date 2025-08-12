@@ -9,7 +9,8 @@ from torch import nn
 from torch.optim import SGD
 from torcheval.metrics import Mean
 from torch.optim.lr_scheduler import MultiStepLR
-class FedAvg:
+
+class BiasedLocalSGD:
     def __init__(self, models, num_classes, **kargs):
         self.comm = MPI.COMM_WORLD
         self.rank = self.comm.Get_rank()

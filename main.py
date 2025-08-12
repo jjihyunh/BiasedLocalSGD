@@ -7,7 +7,7 @@ import torch
 import config as cfg
 from train import framework
 from mpi4py import MPI
-from solvers.fedavg import FedAvg
+from solvers.localsgd import BiasedLocalSGD
 from model import ResNet20
 from feeders.feeder_cifar import cifar
 
@@ -57,7 +57,7 @@ if __name__ == '__main__':
         exit()
 
     # Optimizer
-    solver = FedAvg(models = models,
+    solver = BiasedLocalSGD(models = models,
                     num_classes = num_classes,
                     CPU_interval=cfg.CPU_interval,
                     GPU_interval=cfg.GPU_interval,
