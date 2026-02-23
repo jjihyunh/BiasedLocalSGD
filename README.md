@@ -1,15 +1,24 @@
 # Biased Local SGD Framework: Accelerating Deep Learning on Heterogeneous Systems
-This repository provides a flexible and modular framework for highly efficient deep learning training on heterogeneous systems. It implements our novel Biased Local SGD approach, which intelligently utilizes diverse compute resources (CPUs, GPUs) by system-aware adjustment of local updates to eliminate synchronization overhead, and by introducing controlled bias in data sampling to enhance convergence. This combined method achieves faster training times with comparable or superior accuracy, making it ideal for cutting-edge distributed deep learning research.
+This repository provides a flexible framework for highly efficient deep learning training on heterogeneous systems. It implements our novel Biased Local SGD approach, which intelligently utilizes diverse compute resources (CPUs, GPUs) by system-aware adjustment of local updates to eliminate synchronization overhead, and by introducing controlled bias to enhance convergence. This combined method achieves faster training times, while achieving comparable or even superior model accuracy within the same time budget. This framework empowers researchers to fully leverage their heterogeneous hardware for deep learning.
 
 ## ⚙️ Software Requirements 
-> This code was developed and tested with  <img src="https://pytorch.org/assets/images/logo-icon.svg" alt="PyTorch" width="20" height="20">  PyTorch 2.7.1.
+> This code was developed and tested with  PyTorch 2.7.1 and tensorflow 2.15.0.
 
-* **Step 1: Make sure you have Python and pip installed on your system.**
-* **Step 2: Clone this repository:**
+* **Step 1: Make sure you have `conda` installed on your system.**
+* **Step 2: Create a new conda environment.**
+   ```bash
+   conda create -n myenv python=3.12.7
+* **Step 3: Activate the environment.**
+   ```bash
+   conda activate myenv
+* **Step 4: Clone this repository.**
    ```bash
    git clone https://github.com/jjihyunh/BiasedLocalSGD.git
-* **Step 3:  Install the required packages:**
-    ```bash
+   cd BiasedLocalSGD
+* **Step 5: Install required packages.**
+   ```bash
+   conda install -c conda-forge mpi4py=4.1.1
+   conda install -c conda-forge openai
    pip install -r requirements.txt
 
 ## 📝 Instructions
